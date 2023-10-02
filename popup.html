@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="popup.css" />
+    <title>Screen Recorder</title>
+  </head>
+  <body>
+    <div class="popup_container">
+      <header class="nav_bar_container">
+        <img src="./images/Logo.png" alt="extension_logo" class="logo" />
+        <span class="nav_bar_content">
+          <img src="./images/setting-2.png" alt="settings" class="popup_icon" />
+          <img src="./images/close-circle.png" alt="close" class="popup_icon" />
+        </span>
+      </header>
+      <main>
+        <p class="popup_main_text">
+          This extension helps you record and share help videos with ease.
+        </p>
+        <span class="tab_container">
+          <span class="tab_content">
+            <img src="./images/monitor.png" alt="" class="popup_icons" />
+            <p class="full_screen">Full screen</p>
+          </span>
+          <span class="tab_content">
+            <img src="./images/copy.png" alt="" class="popup_icons" />
+            <p class="current_tab">Current Tab</p>
+          </span>
+        </span>
+        <span class="toggle_container" id="cameraOn">
+          <span class="toggle_content">
+            <img src="./images/video-camera.png" alt="" class="popup_icon" />
+            <p>Camera</p>
+          </span>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+        </span>
+        <span class="toggle_container">
+          <span class="toggle_content">
+            <img src="./images/Vector.png" alt="" class="popup_icon" />
+            <p>Audio</p>
+          </span>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+        </span>
+        <span class="record_btn_container">
+          <button class="record_btn" id="startRecord">Start</button>
+          <button class="record_btn" id="stopRecord">Stop</button>
+        </span>
+      </main>
+      <script src="popup.js"></script>
+    </div>
+  </body>
+</html>
