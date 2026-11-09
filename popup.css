@@ -145,3 +145,81 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+
+/* Enhanced popup styling */
+.tab_content {
+  cursor: pointer;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.tab_content:hover {
+  background-color: #f0f0fa;
+}
+
+.tab_content.active {
+  background-color: #e8e7f8;
+}
+
+.tab_content.active .tab_label {
+  color: #120b48 !important;
+  font-weight: 700;
+}
+
+.status_indicator {
+  font-size: 13px;
+  text-align: center;
+  font-weight: 600;
+  color: #120b48;
+  padding: 6px 0;
+  border-radius: 6px;
+  background: #f0f0fa;
+}
+
+.status_recording {
+  color: #e53935;
+  background: #fde8e8;
+  animation: recBlink 1.2s infinite;
+}
+
+@keyframes recBlink {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.completed_actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px dashed #d0d0dc;
+}
+
+.open_app_btn {
+  width: 100% !important;
+  background-color: #120b48 !important;
+  font-weight: 600;
+}
+
+.download_link {
+  color: #120b48;
+  text-decoration: underline;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.download_link:hover {
+  color: #1b106a;
+}
+
+.popup_icon {
+  cursor: pointer;
+}

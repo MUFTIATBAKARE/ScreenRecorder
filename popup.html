@@ -4,59 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="popup.css" />
-    <title>Screen Recorder</title>
+    <title>HelpMeOut - Screen Recorder</title>
   </head>
   <body>
     <div class="popup_container">
       <header class="nav_bar_container">
-        <img src="./images/Logo.png" alt="extension_logo" class="logo" />
+        <img src="./images/Logo.png" alt="HelpMeOut Logo" class="logo" />
         <span class="nav_bar_content">
-          <img src="./images/setting-2.png" alt="settings" class="popup_icon" />
-          <img src="./images/close-circle.png" alt="close" class="popup_icon" />
+          <img src="./images/setting-2.png" alt="settings" class="popup_icon" id="settingsBtn" title="Settings" />
+          <img src="./images/close-circle.png" alt="close" class="popup_icon" id="closeBtn" title="Close" />
         </span>
       </header>
       <main>
         <p class="popup_main_text">
           This extension helps you record and share help videos with ease.
         </p>
+
         <span class="tab_container">
-          <span class="tab_content">
-            <img src="./images/monitor.png" alt="" class="popup_icons" />
-            <p class="full_screen">Full screen</p>
+          <span class="tab_content active" id="tabFullScreen">
+            <img src="./images/monitor.png" alt="Full screen" class="popup_icons" />
+            <p class="tab_label full_screen">Full screen</p>
           </span>
-          <span class="tab_content">
-            <img src="./images/copy.png" alt="" class="popup_icons" />
-            <p class="current_tab">Current Tab</p>
+          <span class="tab_content" id="tabCurrentTab">
+            <img src="./images/copy.png" alt="Current Tab" class="popup_icons" />
+            <p class="tab_label current_tab">Current Tab</p>
           </span>
         </span>
-        <span class="toggle_container" id="cameraOn">
+
+        <span class="toggle_container" id="cameraToggleContainer">
           <span class="toggle_content">
-            <img src="./images/video-camera.png" alt="" class="popup_icon" />
+            <img src="./images/video-camera.png" alt="Camera" class="popup_icon" />
             <p>Camera</p>
           </span>
           <label class="switch">
-            <input type="checkbox" />
+            <input type="checkbox" id="cameraCheckbox" />
             <span class="slider round"></span>
           </label>
         </span>
-        <span class="toggle_container">
+
+        <span class="toggle_container" id="audioToggleContainer">
           <span class="toggle_content">
-            <img src="./images/Vector.png" alt="" class="popup_icon" />
+            <img src="./images/Vector.png" alt="Audio" class="popup_icon" />
             <p>Audio</p>
           </span>
           <label class="switch">
-            <input type="checkbox" />
+            <input type="checkbox" id="audioCheckbox" checked />
             <span class="slider round"></span>
           </label>
         </span>
+
+        <div id="statusIndicator" class="status_indicator" style="display: none;"></div>
+
         <span class="record_btn_container">
           <button class="record_btn" id="startRecord">Start</button>
-          <button class="record_btn" id="stopRecord">Stop</button>
+          <button class="record_btn" id="stopRecord" disabled style="opacity: 0.5;">Stop</button>
         </span>
+
+        <div id="completedActions" class="completed_actions" style="display: none;">
+          <button class="record_btn open_app_btn" id="openAppBtn">Open in HelpMeOut</button>
+          <a class="download_link" id="downloadLink" download="HelpMeOut_Recording.webm">Download Video (.webm)</a>
+        </div>
       </main>
       <script src="popup.js"></script>
     </div>
